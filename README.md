@@ -31,12 +31,26 @@ When I conduct testing in the UI/Presentattion Layer area, I call it GUI Testing
 
 Whenever I conduct testing directly in the Business Logic Layer, I call it __API Testing__. I test APIs directly by passing some input to the API, getting a Response back, and, again, directly verify/validate the Response. For API Testing I use Postman, RestAssured, Carate, etc. There are many tools available in the marketplace.
 
-In the Backend Layer, I conduct --Database/Backend Testing__.
+In the Backend Layer, I conduct __Database/Backend Testing__.
 
 When I run End-to-End (e2e) Tesintg on the app, I conduct (1) UI, (2) API, and (3) Database/Backend testing.
 
+Performance Testing or Security Testing is there on every level/tier of the app. These are Non-Fuctional types of testing.
 
+As for the Functional testing, I conduct 3 different types of testing on 3 main layers/tiers - GUI, API, DB.
+
+Each layer is different, as well as the tools applcalbe to it. By using a single tool, I can't do everything. There are tools available to support all sorts of testing.
+- Selenium - is specifically and only for GUI testing
+- Postman, RestAssured, SoapUI - are for API testing
+- TOAD or another client - is for DB testing
+
+The main importance of API is that, first, it gets a Request from the User, sends the same Request to the Database Layer which processes the data. Then API gets the Response and presents the same Response to the Presentation Layer. And that is the Response variable I see in the UI. Based on this understanding, why is WebDriver an API? For that I need to understand the architecture of Selenium WebDriver and how WebDriver works internally. Accordingly, I'll be able to understand why WebDriver is an API.
 ![image](https://user-images.githubusercontent.com/70295997/205237705-214914ef-4bc9-441f-8d5f-d9cf405b9444.png)
+
+Automation scripts can't directly talk to the Browser level, on which AUT runs. All web apps would run on a browser, because this is a GUI-level test. To run test cases, I write some automation code, different stataments in Python (or Java, etc.). When I execute my automation script, whatever actions I've written in the code are performed on the Applicatin in the browser. Suppose there's a Login box and I want to enter username and password in text boxes. Who performs these actions, how does my Automation Code talk to the Browser? Since automation scripts can't directly talk to the Browser, internally I need another layer. That layer is WebRiver [API].
+
+
+
 ![image](https://user-images.githubusercontent.com/70295997/205237817-7bc058b3-da6c-48b8-a90c-bb8b6bf91138.png)
 ![image](https://user-images.githubusercontent.com/70295997/205237900-86f700b7-d86b-492d-ac7b-3600d1a726fc.png)
 ![image](https://user-images.githubusercontent.com/70295997/205237971-70d2109e-a073-4d88-80b6-e89d1db464b2.png)
