@@ -186,7 +186,7 @@ Every item on the web page (button, link, image, etc.) is a web element. To scri
 Every web page is designed using HTML language. When viewing the source code or inspecting the web elements with DevTools, there is a certain number of attributes defined for those elements. If there are 100 different elements, I can identify them uniquely using their distinct properties/attributes. I can view these attributes in the HTML code. To view the HTML code, right-click on the elements and Inspect Code (Ctrl+Shift+I). When I put my cursor over every tag, it identifies/highlights some element on the web page.
 
 Every attribure has a value. There are multiple attributes available in an element. Can use 'id', 'name' to identify the element; 'type' is not supported by Selenium. All the methods needed to locate or work with an element are available at the 'driver' object. 
-![image](https://user-images.githubusercontent.com/70295997/205426176-bdd70a4f-ff39-4d3a-a58d-a2847fb0e010.png)
+![image](https://user-images.githubusercontent.com/70295997/205426239-2603e22d-323b-4e3b-b5d1-9bce13dfedaf.png)
 
 
 
