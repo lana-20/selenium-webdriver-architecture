@@ -150,7 +150,7 @@ There are various ways to install and configure Selenium WebDriver. Pre-requisit
 __Test Case__
 1. Open Web Browser (Chrome/Firefox/Edge).
 2. Open URL https://opensource-demo.orangehrmlive.com/.
-3. Provise Username (Admin).
+3. Provide Username (Admin).
 4. Provide Password (admin123).
 5. Click on Login.
 6. Capture the title of the dashboard page (Actual Title).
@@ -163,23 +163,29 @@ Create a Python file in PyCharm - FirstTestCase.py. Copy the test case steps and
 
 Before writing the script, first, I need to import the WebDriver module. Module in a sense that it is available in the Selenium package. I've already installed the Selenium package, which by default already contains the WebDriver Module. Only in the WebDriver module, I get all the necessary Classes and Methods needed for automation.
 
-__from selenium import webdriver__
+    from selenium import webdriver
 
 Once imported, I can access all the Classes and Modules from the WebDriver module. From the module, I need to acces something called 'Chrome' class (or Firefox, Edge ... depending on the browser of choice). In that Chrome class a Constructor is available. The Constructor takes the Browser Driver as a parameter __webdriver.Chrome()__.
 
-Whenever I create __webdriver.Chrome()__, I have to create an object. So, 'driver' is an object: __driver = webdriver.Chrome()__. 'driver' is an object of the 'Chrome' class of the 'webdriver' module. Fro, the WebDriver module I call the Chrome class, and from the Chrome class create a 'driver' object.
+Whenever I create __webdriver.Chrome()__, I have to create an object. 'driver' is an object of the 'Chrome' class of the 'webdriver' module. From the WebDriver module I call the Chrome class, and from the Chrome class create a 'driver' object.
+
+    driver = webdriver.Chrome()
 
 Once I create the 'driver' object, I can access all the methods available in the 'Chrome' class. Chrome() class contains one constructor. That constructor expects the location of the Chrome browser driver. Here, the Driver comes into picture.
 Copy the desired driver's file path (from the local directory) and paste it (wrapped in double quotes) inside the parenthesis of the Chrome() class. This automatically launches my browser. Internally, this Chrome class constructor uses the driver (chromedriver.exe) and launches the browser.
 
-__driver = webdriver.Chrome(executable_path="C:\Drivers\chromedriver_win32\chromedriver.exe")__
+    driver = webdriver.Chrome(executable_path="C:\Drivers\chromedriver_win32\chromedriver.exe")
 
-Can specify the argument directly, without the optional 'executable_path=' part -> __driver = webdriver.Chrome("C:\Drivers\chromedriver_win32\chromedriver.exe")__.
+Can specify the argument directly, without the optional 'executable_path='.
+
+    driver = webdriver.Chrome("C:\Drivers\chromedriver_win32\chromedriver.exe")
 
 The 1st step is done. The next step is to launch my app URL.
 To perform all other operations in the browser, I need certain  methods  that are available in the Chrome() class. I am able to access multiple types of methods through the 'driver' object. I can't access Class methods directly. If I need to access anything from a class, I need to create on object. And I've already created an object called 'driver'.
 
 Now I want to open a URL in the browser that's been launched. I use another method __driver.get("url")__. This statemant launches my app URL in the browser.
+
+    driver.get("https://opensource-demo.orangehrmlive.com/")
 
 Every item on the web page (button, link, image, etc.) is a web element. To script, my Automation Code should (1) identify an element and (2) perform an action, eg, pass a value.
 
@@ -188,8 +194,40 @@ Every web page is designed using HTML language. When viewing the source code or 
 Every attribure has a value. There are multiple attributes available in an element. Can use 'id', 'name' to identify the element; 'type' is not supported by Selenium. All the methods needed to locate or work with an element are available at the 'driver' object. 
 ![image](https://user-images.githubusercontent.com/70295997/205426239-2603e22d-323b-4e3b-b5d1-9bce13dfedaf.png)
 
+I can identify/find the Input Box with __driver.find_element.By.NAME, "txtUsername")__. Next, I pass the value into the input box. For that, I continue chaining to the method with .send_keys().
 
+Enter text in the text box:
 
+    driver.find_element(By.NAME, "txtUsername").send_keys("Admin")
 
+Similarily, identify the Password and enter the value:
+
+    driver.find_element(By.ID, "txtPassword").send_keys("admin123")
+    
+Click on Login button:
+
+    driver.find_element(By.NAME, "btnLogin").click()
+
+Once successfully logged in, verify whether the Title of the page is correct or not. To get the [Expected] Title of the page, right-click on the page, select 'Inspect'. In the <head> tag I can view the title "OrangeHRM". Use __driver.title__ [property](https://learn.microsoft.com/en-us/office/vba/word/concepts/objects-properties-methods/understanding-objects-properties-and-methods). __.title__ is a variable/property, not a method.
+
+Compare the Actual and Expected page titles. Validation is important.
+    
+    actual_title = driver.title
+    expected_title = "OrangeHRM"    # expected data comes from input data
+    if actual_title == expected_title:
+        print("Login Test Passed")
+    else:
+        print("Login Test Failed")
+
+Once the validation is done, my final step is to close the browser, using .close() method:
+    
+    driver.close()
+    
+    
+__Test Case Steps (recap)__
+1. import webdriver
+2. from the Chrome() class create an object for 'driver'
+3. use wevdriver methods and attributes to identify elements and perform the respective actions/verifications
+4. close the browser
 
 
