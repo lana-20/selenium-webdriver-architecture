@@ -230,4 +230,24 @@ __Test Case Steps (recap)__
 3. use wevdriver methods and attributes to identify elements and perform the respective actions/verifications
 4. close the browser
 
+    
+_____
 
+__Selenium 4 Deprecation Warning: executable_path has been deprecated, please pass in a Service object__
+    
+In Selenium 3 I could pass the driver executable_path to the 'driver' object directly. Now, in Selenium 4, first I need to create a 'service' object of a Service() class. And then pass that 'service' object into the 'driver' object.
+
+Use Service() class to create a 'driver' object and set its executable path.
+    
+    from selenium.webdriver.chrome.service import Service
+    
+Create a Service() class object. Pass the driver executable path to the service object.
+    
+    serv_obj = Service("...\chromedriver.exe")
+    
+Pass the 'service' object to to the 'driver' object.
+    
+    driver = webdriver.Chrome(service=serv_obj)
+    
+    
+    
