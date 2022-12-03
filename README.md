@@ -79,7 +79,11 @@ My Automation Code talks directly to the Driver, it invokes the Driver through J
 
 Browser-specific Drivers talk to Browsers using W3C (World Wide Web Consortium) Protocol. W3C Protocol contains a number of standards which a wep app should follow. Browsers and Drivers follow the W3C collection of standards/guidelines/rules/regulations.
 
-Because the W3C Protocol is used between Drivers and Browsers, and JSON Wire Protocol - between Client Library and Drivers, there are some stability and performance related issues. Sometimes test case execution may fail without a reason. Because of these issues, protocola got changed in Selenium 4. Selenium 4 replaced JSON Wire Protocol with W3C Standard Protocol. Drivers started communicating with Client Library over W3C. Now, all the Layers (Client Library, Drivers and Browsers) use the same (single) W3C protocol.
+Because the W3C Protocol is used between Drivers and Browsers, and JSON Wire Protocol - between Client Library and Drivers, there are some stability and performance related issues. Sometimes test case execution may fail without a reason. Because of these issues, protocola got changed in Selenium 4. 
+
+## Selenium 3 vs Selenium 4
+
+Selenium 4 replaced JSON Wire Protocol with W3C Standard Protocol. Drivers started communicating with Client Library over W3C. Now, all the Layers (Client Library, Drivers and Browsers) use the same (single) W3C protocol.
 ![image](https://user-images.githubusercontent.com/70295997/205237900-86f700b7-d86b-492d-ac7b-3600d1a726fc.png)
 
 Through this architectural change, Selenium solved the instability issues and also made the communication faster. Aside from that, internally there are no more changes. Although, in addtion, to solving the stability performance issue, Selenium 4 introduced some new features.
@@ -91,9 +95,23 @@ First, download and configure the Selenium Client Library. Then download the Dri
 
 No need to download/install anything, except Python and PyCharm. These are the pre-requisites to setup and condigure WebDriver in PyCharm directly.
 
-Driver Downloads -> www.selenium.dev/downloads. The official Selenium website provides available language bindings.
-Selenium Clients and WebDriver Language Bindings: Python, Java, C#, Ruby, JavaScript, etc. I use Python (stable version 4.3.0 as of 06/24/22).
+Driver Downloads -> https://www.selenium.dev/downloads/. The official Selenium website provides available language bindings.
+Selenium Clients and WebDriver Language Bindings: Python, Java, C#, Ruby, JavaScript, etc. I use Python (stable version 4.7.0).
 
 There are various ways to install and configure Selenium WebDriver. Pre-requisites for Selenium are Python and PyCharm. Also, before installing Selenium, I need to have browser-specific drivers. When I work with 3 different browsers, I need to download those 3 respective drivers to my local machine.
 
+1) Download browser-specific Drivers from the official Selenium website or the following links:
+- Chrome: https://chromedriver.chromium.org/downloads (latest ChromeDriver version is 109)
+- Edge: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/ (latest EdgeDriver version is 107)
+- Firefox: https://github.com/mozilla/geckodriver/releases (latest GeckoDriver version is0.32)
+- Safari: https://webkit.org/blog/6900/webdriver-support-in-safari-10/ and https://developer.apple.com/documentation/webkit/about_webdriver_for_safari
+
+Eg, I can go to the ChromeDriver link and download a version compatible my current Chrome Browser (version 108 as of 12/02/222). However, ChromeDriver version 109 is already released. Drivers get developed first, Browsers come later.
+
+
+2) Setup WebDriver Movule
+3) ...
+
+
+## Write a Test Case
 
