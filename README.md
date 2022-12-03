@@ -138,7 +138,7 @@ There are various ways to install and configure Selenium WebDriver. Pre-requisit
     
     __Option 2__
     
-    Im PyCharm Terminal (or Command Prompt), run command __pip install selenium__. To upgrade Python bindings, use the __-u__ flag/option __pip install -u selenium__. The Project Python Interpreter shows the version of the latest installed Selenium package.
+    In PyCharm Terminal (or Command Prompt), run command __pip install selenium__. To upgrade Python bindings, use the __-u__ flag/option __pip install -u selenium__. The Project Python Interpreter shows the version of the latest installed Selenium package.
     
     __pip__ is a package manager, a small component that comes with Python.
     
@@ -147,4 +147,48 @@ There are various ways to install and configure Selenium WebDriver. Pre-requisit
 
 ## Write a Test Case
 
-#TODO
+__Test Case__
+1. Open Web Browser (Chrome/Firefox/Edge).
+2. Open URL https://opensource-demo.orangehrmlive.com/.
+3. Provise Username (Admin).
+4. Provide Password (admin123).
+5. Click on Login.
+6. Capture the title of the dashboard page (Actual Title).
+7. Verify title of the page ("OrangeHRM").
+8. Close Browser.
+
+I need to compare the Actual and Expected results. If they match, my test case Passed. If not, it  Failed.
+
+Create a Python file in PyCharm - FirstTestCase.py. Copy the test case steps and paste them as comments into the automation code.
+
+Before writing the script, first, I need to import the WebDriver module. Module in a sense that it is available in the Selenium package. I've already installed the Selenium package, which by default already contains the WebDriver Module. Only in the WebDriver module, I get all the necessary Classes and Methods needed for automation.
+
+__from selenium import webdriver__
+
+Once imported, I can access all the Classes and Modules from the WebDriver module. From the module, I need to acces something called 'Chrome' class (or Firefox, Edge ... depending on the browser of choice). In that Chrome class a Constructor is available. The Constructor takes the Browser Driver as a parameter __webdriver.Chrome()__.
+
+Whenever I create __webdriver.Chrome()__, I have to create an object. So, 'driver' is an object: __driver = webdriver.Chrome()__. 'driver' is an object of the 'Chrome' class of the 'webdriver' module. Fro, the WebDriver module I call the Chrome class, and from the Chrome class create a 'driver' object.
+
+Once I create the 'driver' object, I can access all the methods available in the 'Chrome' class. Chrome() class contains one constructor. That constructor expects the location of the Chrome browser driver. Here, the Driver comes into picture.
+Copy the desired driver's file path (from the local directory) and paste it (wrapped in double quotes) inside the parenthesis of the Chrome() class. This automatically launches my browser. Internally, this Chrome class constructor uses the driver (chromedriver.exe) and launches the browser.
+
+__driver = webdriver.Chrome(executable_path="C:\Drivers\chromedriver_win32\chromedriver.exe")__
+
+Can specify the argument directly, without the optional 'executable_path=' part -> __driver = webdriver.Chrome("C:\Drivers\chromedriver_win32\chromedriver.exe")__.
+
+The 1st step is done. The next step is to launch my app URL.
+To perform all other operations in the browser, I need certain  methods  that are available in the Chrome() class. I am able to access multiple types of methods through the 'driver' object. I can't access Class methods directly. If I need to access anything from a class, I need to create on object. And I've already created an object called 'driver'.
+
+Now I want to open a URL in the browser that's been launched. I use another method __driver.get("url")__. This statemant launches my app URL in the browser.
+
+Every item on the web page (button, link, image, etc.) is a web element. To script, my Automation Code should (1) identify an element and (2) perform an action, eg, pass a value.
+
+Every web page is designed using HTML language. When viewing the source code or inspecting the web elements with DevTools, there is a certain number of attributes defined for those elements. If there are 100 different elements, I can identify them uniquely using their distinct properties/attributes. I can view these attributes in the HTML code. To view the HTML code, right-click on the elements and Inspect Code (Ctrl+Shift+I). When I put my cursor over every tag, it identifies/highlights some element on the web page.
+
+Every attribure has a value. There are multiple attributes available in an element. Can use 'id', 'name' to identify the element; 'type' is not supported by Selenium. All the methods needed to locate or work with an element are available at the 'driver' object. 
+
+
+
+
+
+
