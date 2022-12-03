@@ -103,7 +103,7 @@ There are various ways to install and configure Selenium WebDriver. Pre-requisit
 1) Download browser-specific Drivers from the official Selenium website or the following links:
     - Chrome: https://chromedriver.chromium.org/downloads (latest ChromeDriver version is 109)
     - Edge: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/ (latest EdgeDriver version is 107)
-    - Firefox: https://github.com/mozilla/geckodriver/releases (latest GeckoDriver version is0.32)
+    - Firefox: https://github.com/mozilla/geckodriver/releases (latest GeckoDriver version is 0.32)
     - Safari: https://webkit.org/blog/6900/webdriver-support-in-safari-10/ and https://developer.apple.com/documentation/webkit/about_webdriver_for_safari
 
     Eg, I can go to the ChromeDriver link and download a version compatible my current Chrome Browser (version 108 as of 12/02/222). However, ChromeDriver version 109 is already released. Drivers get developed first, Browsers come later.
@@ -117,6 +117,22 @@ There are various ways to install and configure Selenium WebDriver. Pre-requisit
     - Get Selenium Python [language bindings](https://www.selenium.dev/downloads/#bindings) from Selenium website (latest stable version 4.7 released on 12/02/22).
 
 2) Setup WebDriver Module
+    Get the WebDriver Module:
+    - PyCharm > Project Settings > Python Interpreter
+    - [__pip install selenium__](https://pypi.org/project/selenium/) - run this command in CLI to automatically install Selenium
+    - to install a version forcefully, specify that version number __pip install selenium==4.7.2__
+
+    To setup WebDriver module in PyCharm, first, create a new project or select an existing one. In this project, I set up the Selenium WebDriver. Go to File > Settings > My Project > Python Interpreter. It shows different packages already installed in PyCharm. Now, I need to get the Selenium package.
+    - Click on the plus (+) button
+    - Search for 'selenium'
+    - Locate 'selenium : Python bindings for Selenium'
+    - Click on 'Install Package' button
+    - Once installed, close the packages window
+    - Now, 'selenium' shows among the packages installed for my project's Python Interpreter
+    
+    When a new version of Selenium is released, then by default this new version package also gets installed. This is one way to install Selenium. By default, PyCharm will install a stable version.
+    To install a beta version of Selenium, use CLI command __pip install selenium==4.x.x__.
+
 3) ...
 
 
