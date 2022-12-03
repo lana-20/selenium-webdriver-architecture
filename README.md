@@ -118,9 +118,10 @@ There are various ways to install and configure Selenium WebDriver. Pre-requisit
 
 2) Setup WebDriver Module
     Get the WebDriver Module:
-    - PyCharm > Project Settings > Python Interpreter
-    - [__pip install selenium__](https://pypi.org/project/selenium/) - run this command in CLI to automatically install Selenium
-    - to install a version forcefully, specify that version number __pip install selenium==4.7.2__
+    - Option 1: PyCharm > Project Settings > Python Interpreter
+    - Option 2: [__pip install selenium__](https://pypi.org/project/selenium/) - run this command in CLI to automatically install Selenium. To install a version forcefully, specify that version number __pip install selenium==4.7.2__
+    
+    __Option 1__
 
     To setup WebDriver module in PyCharm, first, create a new project or select an existing one. In this project, I set up the Selenium WebDriver. Go to File > Settings > My Project > Python Interpreter. It shows different packages already installed in PyCharm. Now, I need to get the Selenium package.
     - Click on the plus (+) button
@@ -132,9 +133,18 @@ There are various ways to install and configure Selenium WebDriver. Pre-requisit
     
     When a new version of Selenium is released, then by default this new version package also gets installed. This is one way to install Selenium. By default, PyCharm will install a stable version.
     To install a beta version of Selenium, use CLI command __pip install selenium==4.x.x__.
-
-3) ...
+    
+    To uninstall Selenium (package) in PyCharm, in my project's Python Interpreter select the package and click on the minus (-) button.
+    
+    __Option 2__
+    
+    Im PyCharm Terminal (or Command Prompt), run command __pip install selenium__. To upgrade Python bindings, use the __-u__ flag/option __pip install -u selenium__. The Project Python Interpreter shows the version of the latest installed Selenium package.
+    
+    __pip__ is a package manager, a small component that comes with Python.
+    
+    So, I'm ready with the browser-specific Drivers and Selenium Module (which is also configured in my PyCharm project). Now I'm ready to write Automation Code for a test case.
 
 
 ## Write a Test Case
 
+#TODO
