@@ -114,9 +114,9 @@ There are various ways to install and configure Selenium WebDriver. Pre-requisit
     - Verify that chromedriver.exe executable file is in the folder -> This is the actual Driver for Chrome Browser.
     - Similarily, download other drivers - msedgedriver.exe, geckodriver.exe, etc.
     - Create a 'Drivers' folder locally to store all the downloaded executable files. Keep all the Drivers in one fixed location.
-    - Get Selenium Python language bindings from the links provided on Selenium website (latest stable version 4.7 released on 12/02/22).
+    - Get Selenium Python [language bindings](https://www.selenium.dev/downloads/#bindings) from Selenium website (latest stable version 4.7 released on 12/02/22).
 
-2) Setup WebDriver Movule
+2) Setup WebDriver Module
 3) ...
 
 
