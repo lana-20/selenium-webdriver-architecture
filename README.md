@@ -8,7 +8,7 @@
 
 ## What is a WebDriver?
 
-Selenium contains multiple components - IDE, WebDriver, RC, Grid.
+Selenium contains multiple components - IDE, [WebDriver](https://selenium-python.readthedocs.io/api.html), RC, Grid.
 The most popular component is Selenium WebDriver. I use it to automate web apps. Selenium on its own only supports web apps.
 WebDriver is a package/module in respect to Python. In Java, I'd call it an interface. Module contains functions, classes, classes contain different types of methods.
 WebDriver module contains a number of classes. Eg, for each browser there's a class availabe:
