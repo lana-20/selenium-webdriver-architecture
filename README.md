@@ -248,6 +248,13 @@ Create a Service() class object. Pass the driver executable path to the service 
 Pass the 'service' object to to the 'driver' object.
     
     driver = webdriver.Chrome(service=serv_obj)
-    
-    
+
+
+----
+
+[W3C WebDriver Spec](https://www.w3.org/TR/webdriver/)
+
+[Simon Stewart - leader of Selenium project](https://blog.rocketpoweredjetpants.com/)
+
+
     
