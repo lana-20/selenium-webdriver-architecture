@@ -53,6 +53,8 @@ Automation scripts can't directly talk to the Browser level, on which AUT runs. 
 
 Who performs these actions, how does my Automation Code talk to the Browser? Since automation scripts can't directly talk to the Browser, internally I need another layer. That layer is WebDriver [API]. WebDriver contains many classes and methods, to which I refer to inside of the program (automation code). My Automation Code, first, talks to the WebDriver. And the WebDriver methods, in their turn, directly execute the statements in the AUT.
 
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/70295997/212764191-07c53134-456a-4dba-9503-9356c07efb51.png">
+
 Since WebDriver can't directly talk to the Browser, Browser Drivers are required. Wuthout Browser Drivers, even WebDriver API can't directly talk to the Application [Under Test].
 
 Whatever statements I write in my Automation code are taken by the WebDriver. WebDriver takes these statements and comprehends them. Accordingly, WebDriver executes the statements in my Application [Under Test]. WebDriver acts as an API between my Automation and the Browser. That's the reason I can call it as __WebDriver API__. WebDriver API contains many classes I can use and methods I can call. That way, I'm able to interact with the Browser. And the actions, derived from my Automation Scripts, are performed on the Application [Under Test]. Here, WebDriver is an API.
