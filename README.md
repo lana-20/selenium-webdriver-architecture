@@ -85,6 +85,8 @@ Because the W3C Protocol is used between Drivers and Browsers, and JSON Wire Pro
 
 ## Selenium 3 vs Selenium 4
 
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/70295997/212765548-fd08bc3c-b5c0-47ce-a176-9d72abc22d4e.png">
+
 Selenium 4 replaced JSON Wire Protocol with W3C Standard Protocol. Drivers started communicating with Client Library over W3C. Now, all the Layers (Client Library, Drivers and Browsers) use the same (single) W3C protocol.
 ![image](https://user-images.githubusercontent.com/70295997/205237900-86f700b7-d86b-492d-ac7b-3600d1a726fc.png)
 
